@@ -9,7 +9,10 @@ fn main() {
     rocket::ignite()
         .mount(
             "/",
-            routes![controller::index, controller::hello, controller::employee],
+            routes![controller::main_controller::index, 
+                controller::main_controller::hello, 
+                controller::main_controller::employee, 
+                controller::main_controller::post_employee],
         )
         .launch();
 }
