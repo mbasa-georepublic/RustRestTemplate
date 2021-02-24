@@ -12,14 +12,6 @@ pub fn hello(name: String, age: u8) -> String {
     format!("Hello, {} year old named {}!", mage, name)
 }
 
-/**
- * Sample curl POST request: 
- * 
- * curl -X POST -H "Content-Type: application/json"  -d 
- * '[{"name":"Mario Basa","age":40,"dept":"Production","skills":[{"id":1,"desc":"sing"},{"id":2,"desc":"dance"}]}]' 
- * http://localhost:8000/employee
- * 
- */
 #[ post("/employee",format = "json",data="<emp>") ]
 pub fn post_employee(emp : Json<Vec<employee::Employee>>) -> 
     Json<Vec<employee::Employee>> {
